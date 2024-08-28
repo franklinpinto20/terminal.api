@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:SPTCDAwsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:SPTCDAwsdl">
+<types>
+<xsd:schema targetNamespace="urn:SPTCDAwsdl"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="IngresoDespachoRequest">
+  <part name="usuario" type="xsd:string" />
+  <part name="clave" type="xsd:string" />
+  <part name="numero_despacho" type="xsd:string" />
+  <part name="ter_id" type="xsd:integer" />
+  <part name="nit_empresa_tppc1" type="xsd:string" />
+  <part name="clase_vehiculo" type="xsd:integer" />
+  <part name="nivel_servicio" type="xsd:integer" />
+  <part name="placa" type="xsd:string" />
+  <part name="dpto_origen_ruta" type="xsd:string" />
+  <part name="municipio_origen_ruta" type="xsd:string" />
+  <part name="dpto_destino_ruta" type="xsd:string" />
+  <part name="municipio_destino_ruta" type="xsd:string" />
+  <part name="via_ruta" type="xsd:string" />
+  <part name="fecha_despacho" type="xsd:string" />
+  <part name="hora_despacho" type="xsd:string" />
+  <part name="minuto_despacho" type="xsd:string" />
+  <part name="pasajeros_despacho" type="xsd:integer" />
+  <part name="tipo_despacho" type="xsd:integer" />
+  <part name="tipo_despacho_autorizado" type="xsd:integer" />
+  <part name="tipo_convenio" type="xsd:integer" />
+  <part name="nit_empresa_tppc2" type="xsd:integer" />
+  <part name="nit_empresa_te" type="xsd:integer" />
+  <part name="terminales_recorrido_ruta" type="xsd:integer" />
+  <part name="valor_tasa_uso" type="xsd:integer" />
+  <part name="origen_placa" type="xsd:integer" /></message>
+<message name="IngresoDespachoResponse">
+  <part name="return" type="xsd:Array" /></message>
+<message name="IngresoAlcoholimetriaRequest">
+  <part name="usuario" type="xsd:string" />
+  <part name="clave" type="xsd:string" />
+  <part name="numero_despacho" type="xsd:string" />
+  <part name="nit_operador" type="xsd:string" />
+  <part name="razon_social_operador" type="xsd:string" />
+  <part name="ter_id" type="xsd:string" />
+  <part name="tipo_documento_conductor" type="xsd:integer" />
+  <part name="numero_documento_conductor" type="xsd:string" />
+  <part name="nombre_conductor" type="xsd:string" />
+  <part name="fecha_prueba" type="xsd:string" />
+  <part name="hora_prueba" type="xsd:string" />
+  <part name="minuto_prueba" type="xsd:string" />
+  <part name="resultados_prueba" type="xsd:integer" />
+  <part name="grado_alcoholemia" type="xsd:integer" />
+  <part name="examen_medico" type="xsd:integer" />
+  <part name="hora_examen" type="xsd:string" />
+  <part name="minuto_examen" type="xsd:string" />
+  <part name="resultado_examen" type="xsd:integer" /></message>
+<message name="IngresoAlcoholimetriaResponse">
+  <part name="return" type="xsd:Array" /></message>
+<message name="IngresoLlegadasRequest">
+  <part name="usuario" type="xsd:string" />
+  <part name="clave" type="xsd:string" />
+  <part name="ter_id" type="xsd:integer" />
+  <part name="nit_empresa_tppc" type="xsd:string" />
+  <part name="placa" type="xsd:string" />
+  <part name="tipo_llegada" type="xsd:integer" />
+  <part name="fecha_llegada" type="xsd:string" />
+  <part name="hora_llegada" type="xsd:string" />
+  <part name="minuto_llegada" type="xsd:string" />
+  <part name="pasajeros_llegada" type="xsd:integer" />
+  <part name="dpto_origen_ruta" type="xsd:string" />
+  <part name="municipio_origen_ruta" type="xsd:string" />
+  <part name="dpto_destino_ruta" type="xsd:string" />
+  <part name="municipio_destino_ruta" type="xsd:string" /></message>
+<message name="IngresoLlegadasResponse">
+  <part name="return" type="xsd:Array" /></message>
+<portType name="TerminalesSuperTransportePortType">
+  <operation name="IngresoDespacho">
+    <documentation>Permite ingresar Despacho de automovil</documentation>
+    <input message="tns:IngresoDespachoRequest"/>
+    <output message="tns:IngresoDespachoResponse"/>
+  </operation>
+  <operation name="IngresoAlcoholimetria">
+    <documentation>Permite ingresar Alcoholimetrias positivas</documentation>
+    <input message="tns:IngresoAlcoholimetriaRequest"/>
+    <output message="tns:IngresoAlcoholimetriaResponse"/>
+  </operation>
+  <operation name="IngresoLlegadas">
+    <documentation>Permite ingresar Llegadas de automovil</documentation>
+    <input message="tns:IngresoLlegadasRequest"/>
+    <output message="tns:IngresoLlegadasResponse"/>
+  </operation>
+</portType>
+<binding name="TerminalesSuperTransporteBinding" type="tns:TerminalesSuperTransportePortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="IngresoDespacho">
+    <soap:operation soapAction="urn:SPTCDAwsdl#IngresoDespacho" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:SPTCDAwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:SPTCDAwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="IngresoAlcoholimetria">
+    <soap:operation soapAction="urn:SPTCDAwsdl#IngresoAlcoholimetria" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:SPTCDAwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:SPTCDAwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="IngresoLlegadas">
+    <soap:operation soapAction="urn:SPTCDAwsdl#IngresoLlegadas" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:SPTCDAwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:SPTCDAwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="TerminalesSuperTransporte">
+  <port name="TerminalesSuperTransportePort" binding="tns:TerminalesSuperTransporteBinding">
+    <soap:address location="http://aplicaciones.supertransporte.gov.co/service_Terminales"/>
+  </port>
+</service>
+</definitions>
