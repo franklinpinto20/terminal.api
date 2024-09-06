@@ -1,8 +1,9 @@
-package com.terminal.api.service;
+package com.terminal.api.dao;
 
 import java.util.List;
 
 import com.terminal.api.client.EntryDispatchRequest;
+import com.terminal.api.entity.RolEntity;
 import com.terminal.api.model.RolResponse;
 
 
@@ -15,7 +16,7 @@ import com.terminal.api.model.RolResponse;
  * @Date 22/08/2024
  * @version 1.0.0
  */
-public interface RolService {
+public interface IRolDao {
 	
 	
 	
@@ -23,7 +24,7 @@ public interface RolService {
 	 * 
 	 * @return
 	*/ 
-	//List<RolResponse> retrieve();
-	List<RolResponse> retrieve();
+
+	List<RolEntity> retrieve();
 	
 }

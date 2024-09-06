@@ -2,6 +2,7 @@ package com.terminal.api;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,5 +70,8 @@ public class Application implements CommandLineRunner {
 		});
 
 		emplist.forEach(System.out::println);
+		for (RolResponse rol : emplist) {
+			System.out.println(""+rol.getRol());
+		}
 	}
 }

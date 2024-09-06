@@ -1,23 +1,40 @@
-package com.terminal.api.client;
+package com.terminal.api.entity;
 
 import java.math.BigInteger;
 
 
 
-public class EntryDispatchRequest {
+public class EntryDispatchEntity {
 
 	
 	
-	public EntryDispatchRequest(String usuario, String clave, String numeroDespacho, BigInteger terId,
-			String nitEmpresaTppc1, BigInteger claseVehiculo, BigInteger nivelServicio, String placa,
-			String dptoOrigenRuta, String municipioOrigenRuta, String dptoDestinoRuta, String municipioDestinoRuta,
-			String viaRuta, String fechaDespacho, String horaDespacho, String minutoDespacho,
-			BigInteger pasajerosDespacho, BigInteger tipoDespacho, BigInteger tipoDespachoAutorizado,
-			BigInteger tipoConvenio, BigInteger nitEmpresaTppc2, BigInteger nitEmpresaTe,
-			BigInteger terminalesRecorridoRuta, BigInteger valorTasaUso, BigInteger origenPlaca) {
+	public EntryDispatchEntity(
+			String numeroDespacho, 
+			BigInteger terId,
+			String nitEmpresaTppc1,
+			BigInteger claseVehiculo,
+			BigInteger nivelServicio, 
+			String placa,
+			String dptoOrigenRuta, 
+			String municipioOrigenRuta, 
+			String dptoDestinoRuta, 
+			String municipioDestinoRuta,
+			String viaRuta, 
+			String
+			fechaDespacho, 
+			String horaDespacho, 
+			String minutoDespacho,
+			BigInteger pasajerosDespacho, 
+			BigInteger tipoDespacho, 
+			BigInteger tipoDespachoAutorizado,
+			String tipoConvenio, 
+			String nitEmpresaTppc2, 
+			String nitEmpresaTe,
+			BigInteger terminalesRecorridoRuta,
+			BigInteger valorTasaUso,
+			BigInteger origenPlaca) {
 		super();
-		this.usuario = usuario;
-		this.clave = clave;
+	
 		this.numeroDespacho = numeroDespacho;
 		this.terId = terId;
 		this.nitEmpresaTppc1 = nitEmpresaTppc1;
@@ -42,8 +59,7 @@ public class EntryDispatchRequest {
 		this.valorTasaUso = valorTasaUso;
 		this.origenPlaca = origenPlaca;
 	}
-	private  String usuario;
-	private  String clave;
+
 	private  String numeroDespacho;
 	private  BigInteger terId;
 	private  String nitEmpresaTppc1;
@@ -61,26 +77,15 @@ public class EntryDispatchRequest {
 	private  BigInteger pasajerosDespacho;
 	private  BigInteger tipoDespacho;
 	private  BigInteger tipoDespachoAutorizado;
-	private  BigInteger tipoConvenio;
-	private  BigInteger nitEmpresaTppc2;
-	private  BigInteger nitEmpresaTe;
+	private  String tipoConvenio;
+	private  String nitEmpresaTppc2;
+	private  String nitEmpresaTe;
 	private  BigInteger terminalesRecorridoRuta;
 	private  BigInteger valorTasaUso;
 	private  BigInteger origenPlaca;
 	
 	
-	public String getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-	public String getClave() {
-		return clave;
-	}
-	public void setClave(String clave) {
-		this.clave = clave;
-	}
+	
 	public String getNumeroDespacho() {
 		return numeroDespacho;
 	}
@@ -183,22 +188,18 @@ public class EntryDispatchRequest {
 	public void setTipoDespachoAutorizado(BigInteger tipoDespachoAutorizado) {
 		this.tipoDespachoAutorizado = tipoDespachoAutorizado;
 	}
-	public BigInteger getTipoConvenio() {
-		return tipoConvenio;
-	}
-	public void setTipoConvenio(BigInteger tipoConvenio) {
-		this.tipoConvenio = tipoConvenio;
-	}
-	public BigInteger getNitEmpresaTppc2() {
+	
+	
+	public String getNitEmpresaTppc2() {
 		return nitEmpresaTppc2;
 	}
-	public void setNitEmpresaTppc2(BigInteger nitEmpresaTppc2) {
+	public void setNitEmpresaTppc2(String nitEmpresaTppc2) {
 		this.nitEmpresaTppc2 = nitEmpresaTppc2;
 	}
-	public BigInteger getNitEmpresaTe() {
+	public String getNitEmpresaTe() {
 		return nitEmpresaTe;
 	}
-	public void setNitEmpresaTe(BigInteger nitEmpresaTe) {
+	public void setNitEmpresaTe(String nitEmpresaTe) {
 		this.nitEmpresaTe = nitEmpresaTe;
 	}
 	public BigInteger getTerminalesRecorridoRuta() {
@@ -218,6 +219,12 @@ public class EntryDispatchRequest {
 	}
 	public void setOrigenPlaca(BigInteger origenPlaca) {
 		this.origenPlaca = origenPlaca;
+	}
+	public String getTipoConvenio() {
+		return tipoConvenio;
+	}
+	public void setTipoConvenio(String tipoConvenio) {
+		this.tipoConvenio = tipoConvenio;
 	}
      
      

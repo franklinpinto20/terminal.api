@@ -3,7 +3,7 @@ package com.terminal.api.repository;
 //import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.terminal.api.entity.Rol;
+import com.terminal.api.entity.RolEntity;
 
 //@Repository
 

@@ -33,7 +33,7 @@ import lombok.Setter;
 	@Getter
 	@Setter
 	@Cacheable
-	public class Rol  implements java.io.Serializable {
+	public class RolEntity  implements java.io.Serializable {
 
 	    /**
 		 * 
@@ -50,13 +50,13 @@ import lombok.Setter;
 	    private String descripcion;
 	    
 	   // private String flush;
-		public Rol(Long int1, String string, String string2) {
+		public RolEntity(Long int1, String string, String string2) {
 			// TODO Auto-generated constructor stub
 			this.idRol=int1;
 			this.rol=string;
 			this.descripcion=string2;
 		}
-		public Rol(String int1, String string, String string2) {
+		public RolEntity(String int1, String string, String string2) {
 			// TODO Auto-generated constructor stub
 			this.placa=int1;
 			this.rol=string;

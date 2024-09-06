@@ -15,7 +15,7 @@ import com.terminal.api.model.RolResponse;
  * @Date 22/08/2024
  * @version 1.0.0
  */
-public interface RolService {
+public interface DispatchService2 {
 	
 	
 	
@@ -24,6 +24,6 @@ public interface RolService {
 	 * @return
 	*/ 
 	//List<RolResponse> retrieve();
-	List<RolResponse> retrieve();
+	List<EntryDispatchRequest> retrieve();
 	
 }

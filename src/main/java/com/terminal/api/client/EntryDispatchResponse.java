@@ -4,11 +4,14 @@ import java.math.BigInteger;
 
 
 
-public class EntryDispatchRequest {
+public class EntryDispatchResponse {
 
 	
 	
-	public EntryDispatchRequest(String usuario, String clave, String numeroDespacho, BigInteger terId,
+	public EntryDispatchResponse() {
+		super();
+	}
+	public EntryDispatchResponse(String numeroDespacho, BigInteger terId,
 			String nitEmpresaTppc1, BigInteger claseVehiculo, BigInteger nivelServicio, String placa,
 			String dptoOrigenRuta, String municipioOrigenRuta, String dptoDestinoRuta, String municipioDestinoRuta,
 			String viaRuta, String fechaDespacho, String horaDespacho, String minutoDespacho,
@@ -16,8 +19,7 @@ public class EntryDispatchRequest {
 			BigInteger tipoConvenio, BigInteger nitEmpresaTppc2, BigInteger nitEmpresaTe,
 			BigInteger terminalesRecorridoRuta, BigInteger valorTasaUso, BigInteger origenPlaca) {
 		super();
-		this.usuario = usuario;
-		this.clave = clave;
+		
 		this.numeroDespacho = numeroDespacho;
 		this.terId = terId;
 		this.nitEmpresaTppc1 = nitEmpresaTppc1;
@@ -42,8 +44,7 @@ public class EntryDispatchRequest {
 		this.valorTasaUso = valorTasaUso;
 		this.origenPlaca = origenPlaca;
 	}
-	private  String usuario;
-	private  String clave;
+	
 	private  String numeroDespacho;
 	private  BigInteger terId;
 	private  String nitEmpresaTppc1;
@@ -69,18 +70,7 @@ public class EntryDispatchRequest {
 	private  BigInteger origenPlaca;
 	
 	
-	public String getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-	public String getClave() {
-		return clave;
-	}
-	public void setClave(String clave) {
-		this.clave = clave;
-	}
+
 	public String getNumeroDespacho() {
 		return numeroDespacho;
 	}

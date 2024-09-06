@@ -3,6 +3,7 @@ package com.terminal.api.service;
 import java.util.List;
 
 import com.terminal.api.client.EntryDispatchRequest;
+import com.terminal.api.client.EntryDispatchResponse;
 import com.terminal.api.model.RolResponse;
 
 
@@ -15,7 +16,7 @@ import com.terminal.api.model.RolResponse;
  * @Date 22/08/2024
  * @version 1.0.0
  */
-public interface RolService {
+public interface DispatchService {
 	
 	
 	
@@ -23,7 +24,7 @@ public interface RolService {
 	 * 
 	 * @return
 	*/ 
-	//List<RolResponse> retrieve();
-	List<RolResponse> retrieve();
+	//List<EntryDispatchResponse> retrieve();
+	List<EntryDispatchResponse> retrieve();
 	
 }
