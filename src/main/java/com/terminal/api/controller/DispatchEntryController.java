@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.terminal.api.client.EntryDispatchResponse;
+import com.terminal.api.constant.RouteConstant;
 import com.terminal.api.exeption.ApiError;
 import com.terminal.api.service.DispatchService;
 
@@ -31,8 +32,7 @@ import lombok.RequiredArgsConstructor;
  */
 @RestController
 @RequiredArgsConstructor
-//@RequestMapping(path = RouteConstant.BASE_PATH)
-@RequestMapping(path = "/api")
+@RequestMapping(path = RouteConstant.BASE_PATH)
 public class DispatchEntryController {
 
     
@@ -41,9 +41,9 @@ public class DispatchEntryController {
 
 
 
-    //@GetMapping(path = RouteConstant.MESSAGE_VALUE_RETRIEVE_PATH, produces = MediaType.APPLICATION_JSON_VALUE)
-     //
-     @GetMapping(path ="/private/v1/dispatch/retrieve/data", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = RouteConstant.DISPATCH_ENTRY_RETRIEVE_PATH, produces = MediaType.APPLICATION_JSON_VALUE)
+     
+     
     @ApiOperation(value = "Get all properties from message value")
     @ApiResponses({
         @ApiResponse(code = 200, message = "Success", response = List.class),

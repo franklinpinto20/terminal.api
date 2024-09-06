@@ -6,7 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  * 
@@ -19,6 +21,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan(basePackages = "com.terminal.api")
 @EntityScan("com.terminal.api.entity") 
+@PropertySource("file:C:/Users/Usuario/Documents/workspace/terminal.api/src/main/resources/properties.properties")
 @SpringBootApplication(scanBasePackages = {"com.terminal.api.service","com.terminal.api.repository","com.terminal.api"})
 
 
@@ -38,4 +41,5 @@ public class Application implements CommandLineRunner {
 		 logger.info("INICIANDO PLATAFORMA DE GESTION DE TERMINALES");
 		
 	}
+	
 }

@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.terminal.api.client.EntryDispatchResponse;
@@ -32,11 +33,15 @@ import com.terminal.api.entity.EntryDispatchEntity;
 @Service
 public class DispatchDaoImpl implements IDispatchDao {
 	
-	
+	 @Value("${app.path.access.datasource.url}")
+	 private String rutaBD;
+	 
+	 @Value("${app.path.file.sql}")
+	 private String rutaArchivoSql;
 	 
     public List<EntryDispatchEntity> retrieve(){
     	
-    	String rutaBD = "C:/pas2.accdb"; // Ruta a tu base de datos
+    	
         String url = "jdbc:ucanaccess://" + rutaBD;
 
      // Fechas que pasarás como parámetros (puedes obtenerlas de tu aplicación)
@@ -146,10 +151,10 @@ public class DispatchDaoImpl implements IDispatchDao {
     }
     
     public String obtenerQuery() {
-    	String rutaArchivo = "C:/Users/Usuario/Documents/workspace/terminal.api/src/main/resources/view.sql"; // Especifica la ruta del archivo aquí
+    	
         StringBuilder contenido = new StringBuilder();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivoSql))) {
             String linea;
             while ((linea = br.readLine()) != null) {
                 contenido.append(linea).append("\n");

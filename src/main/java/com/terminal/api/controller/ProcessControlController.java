@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.terminal.api.AppProperties;
 import com.terminal.api.client.Principal;
 import com.terminal.api.constant.RouteConstant;
 import com.terminal.api.entity.EntryDispatchEntity;
@@ -28,6 +29,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 
 
 
@@ -42,20 +44,19 @@ import org.springframework.beans.factory.annotation.Value;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(path = RouteConstant.BASE_PATH)
-//@RequestMapping(path = "/api")
+
 public class ProcessControlController {
 
 	 @Autowired
 	 ProcessControlService processControlService;
 
-	// @Value("${spring.datasource.url}")
-	// private String envProperty;
+	 @Value("${app.customProperty}")
+	 private String customProperty;
 	 
-	 private static final Logger logger = LoggerFactory.getLogger(Principal.class);
+	 private static final Logger logger = LoggerFactory.getLogger(ProcessControlController.class);
 
-    //@@PostMapping(path = RouteConstant.MESSAGE_VALUE_RETRIEVE_PATH, produces = MediaType.APPLICATION_JSON_VALUE)
-     //
-     @PostMapping(path ="/private/v1/process", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = RouteConstant.PROCESS_CONTROL_SAVE_PATH, produces = MediaType.APPLICATION_JSON_VALUE)
+    
     @ApiOperation(value = "Persiste valores de proceso")
     @ApiResponses({
         @ApiResponse(code = 200, message = "Success", response = List.class),
@@ -110,22 +111,16 @@ public class ProcessControlController {
 
    
 
-    // @GetMapping(path = RouteConstant.PROCESS_CONTROL_RETRIEVE_PATH, produces = MediaType.APPLICATION_JSON_VALUE)
-    
-      @GetMapping(path ="/private/v1/process/retrieve/data", produces = MediaType.APPLICATION_JSON_VALUE)
-     @ApiOperation(value = "Get all properties from message value")
+     @GetMapping(path = RouteConstant.PROCESS_CONTROL_RETRIEVE_PATH, produces = MediaType.APPLICATION_JSON_VALUE)
+     @ApiOperation(value = "Get all process ")
      @ApiResponses({
          @ApiResponse(code = 200, message = "Success", response = List.class),
          @ApiResponse(code = 404, message = "Not Found", response = ApiError.class),
          @ApiResponse(code = 500, message = "Internal Server Error", response = ApiError.class)
      })
      public ResponseEntity<List<ProcessControlResponse>> retrieve() {
-    	  
-    	  logger.trace("Este es un mensaje TRACE");
-          logger.debug("Este es un mensaje DEBUG");
-       //   logger.info("Este es un mensaje INFO"+envProperty);
-          logger.warn("Este es un mensaje WARN");
-          logger.error("Este es un mensaje ERROR");
+
+
          return ResponseEntity.ok(this.processControlService.getAll());
      }
 }
