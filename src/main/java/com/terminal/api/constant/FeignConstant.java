@@ -2,10 +2,9 @@ package com.terminal.api.constant;
 
 /**
  * 
- * @author gildardoortiz
- * Event note management API 
- * @Seguritech
- * 30 jun. 2021
+ * @author Franklin Pinto
+ * @Project Gestión en Terminales
+ * @Date 22/08/2024
  * @version 1.0.0
  */
 public class FeignConstant {

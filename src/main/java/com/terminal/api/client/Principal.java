@@ -1,20 +1,35 @@
 package com.terminal.api.client;
-import java.net.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.io.*;
-import java.math.BigInteger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
+/**
+ * 
+ * @author Franklin Pinto
+ * @Project Gestión en Terminales
+ * @Date 22/08/2024
+ * @version 1.0.0
+ */
+
 
 public class Principal {
+	// Crear un logger para esta clase
+    private static final Logger logger = LoggerFactory.getLogger(Principal.class);
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		//TerminalesSuperTransporte t = new TerminalesSuperTransporte();
-	
+		logger.trace("Este es un mensaje TRACE");
+        logger.debug("Este es un mensaje DEBUG");
+        logger.info("Este es un mensaje INFO");
+        logger.warn("Este es un mensaje WARN");
+        logger.error("Este es un mensaje ERROR");
 		
 		try {
-			TerminalesSuperTransportePortType iTerminal = null;
+			/*
+			 * 
+			 * TerminalesSuperTransportePortType iTerminal = null;
 			
 			
 			TerminalesSuperTransporte service = new TerminalesSuperTransporte();
@@ -46,12 +61,12 @@ public class Principal {
 					new BigInteger("17700"), 
 					new BigInteger("0"));
 			
+						System.out.println("Respuesa a"+res);
+			*/
 			
 			
-			List<EntryDispatchRequest> lst= new ArrayList<>();
 			
-			
-			System.out.println("Respuesa a"+res);
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

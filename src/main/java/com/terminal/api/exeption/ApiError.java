@@ -10,10 +10,8 @@ import com.terminal.api.constant.ErrorConstant;
 import lombok.Data;
 /**
  * 
- * 
- * @author franklin.pinto
- * Event note management API 
- * @Mineducacion
+ * @author Franklin Pinto
+ * @Project Gestión en Terminales
  * @Date 22/08/2024
  * @version 1.0.0
  */

@@ -3,9 +3,8 @@ package com.terminal.api.model;
 import lombok.Data;
 /**
  * 
- * @author Franklin Pinto	
- * @Project Information Panel Management
- * @mineduacion
+ * @author Franklin Pinto
+ * @Project Gestión en Terminales
  * @Date 22/08/2024
  * @version 1.0.0
  */

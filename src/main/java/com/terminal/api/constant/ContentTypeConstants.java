@@ -7,10 +7,9 @@ import org.springframework.http.MediaType;
 
 /**
  * 
- * @author gildardoortiz
- * @cad lite API 
- * @Seguritech
- * 16 jun. 2021
+ * @author Franklin Pinto
+ * @Project Gestión en Terminales
+ * @Date 22/08/2024
  * @version 1.0.0
  */
 public class ContentTypeConstants {

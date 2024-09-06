@@ -2,7 +2,13 @@ package com.terminal.api.client;
 
 import java.math.BigInteger;
 
-
+/**
+ * 
+ * @author Franklin Pinto
+ * @Project Gestión en Terminales
+ * @Date 22/08/2024
+ * @version 1.0.0
+ */
 
 public class EntryDispatchResponse {
 

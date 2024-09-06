@@ -3,19 +3,15 @@ package com.terminal.api.entity;
 
 
 
-/*import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;*/
+/**
+ * 
+ * @author Franklin Pinto
+ * @Project Gestiósn en Terminales
+ * @Date 22/08/2024
+ * @version 1.0.0
+ */
 
 
-import org.springframework.data.relational.core.mapping.Column;
-//import org.springframework.data.relational.core.mapping.Entity;
-//import org.springframework.data.relational.core.mapping.GeneratedValue;
-//import org.springframework.data.relational.core.mapping.GenerationType;
-//import org.springframework.data.relational.core.mapping.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 

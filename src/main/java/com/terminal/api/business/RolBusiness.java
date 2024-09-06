@@ -13,6 +13,14 @@ import com.terminal.api.model.RolRequest;
 import com.terminal.api.model.RolResponse;
 import com.terminal.api.service.RolService;
 
+/**
+ * 
+ * @author Franklin Pinto
+ * @Project Gestion en Terminales
+ * @Date 22/08/2024
+ * @version 1.0.0
+ */
+
 
 @Service
 public class RolBusiness implements RolService {

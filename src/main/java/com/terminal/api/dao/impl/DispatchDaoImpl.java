@@ -1,25 +1,5 @@
 package com.terminal.api.dao.impl;
 
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
-import com.terminal.api.client.EntryDispatchRequest;
-import com.terminal.api.client.EntryDispatchResponse;
-import com.terminal.api.dao.IDispatchDao;
-import com.terminal.api.entity.EntryDispatchEntity;
-import com.terminal.api.entity.RolEntity;
-import com.terminal.api.model.RolResponse;
-import com.terminal.api.repository.RolRepository;
-import com.terminal.api.service.DispatchService;
-import com.terminal.api.service.RolService;
-
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -33,14 +13,26 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
+
+import com.terminal.api.client.EntryDispatchResponse;
+import com.terminal.api.dao.IDispatchDao;
+import com.terminal.api.entity.EntryDispatchEntity;
+
+/**
+ * 
+ * @author Franklin Pinto
+ * @Project Gestión en Terminales
+ * @Date 22/08/2024
+ * @version 1.0.0
+ */
 
 @Service
 public class DispatchDaoImpl implements IDispatchDao {
 	
-	 @Autowired
-	    private JdbcTemplate template;
+	
 	 
     public List<EntryDispatchEntity> retrieve(){
     	

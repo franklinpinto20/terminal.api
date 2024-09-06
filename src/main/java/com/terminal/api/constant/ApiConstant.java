@@ -3,10 +3,9 @@ package com.terminal.api.constant;
 
 /**
  * 
- * @author Franklin pinto
- * @Project Information Panel Management
- * @Seguritech
- * @Date 14/09/2021
+ * @author Franklin Pinto
+ * @Project Gestión en Terminales
+ * @Date 22/08/2024
  * @version 1.0.0
  */
 public abstract class ApiConstant {

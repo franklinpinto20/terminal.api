@@ -3,9 +3,7 @@ package com.terminal.api.dao.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -13,8 +11,14 @@ import org.springframework.stereotype.Service;
 
 import com.terminal.api.dao.IRolDao;
 import com.terminal.api.entity.RolEntity;
-import com.terminal.api.model.RolResponse;
-import com.terminal.api.service.RolService;
+
+/**
+ * 
+ * @author Franklin Pinto
+ * @Project Gestión en Terminales
+ * @Date 22/08/2024
+ * @version 1.0.0
+ */
 
 
 @Service

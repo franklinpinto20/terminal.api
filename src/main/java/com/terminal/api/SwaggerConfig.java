@@ -16,9 +16,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * 
  * 
- * @author franklin.pinto
- *  
- * @Mineducacion
+ * @author Franklin Pinto
+ * @Project Gestion en Terminales
  * @Date 22/08/2024
  * @version 1.0.0
  */
