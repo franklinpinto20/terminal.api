@@ -40,7 +40,9 @@ public class ProcessControlEntity  implements java.io.Serializable {
 		 */
 		private static final long serialVersionUID = -4050885068713886977L;
 		
-				
+		public ProcessControlEntity() {
+			
+		}
 		
 
 		public ProcessControlEntity(Long id, Long nConduce, String request, String response, String status) {
@@ -69,8 +71,8 @@ public class ProcessControlEntity  implements java.io.Serializable {
 	    @Column(name = "status")
 	    private String status;
 	    
-	    @Column(name = "datetime", nullable = false)
-	    private Date datetime;
+	    @Column(name = "processDate", nullable = false)
+	    private Date processDate;
 
 	       
 	    
@@ -115,13 +117,17 @@ public class ProcessControlEntity  implements java.io.Serializable {
 			this.status = status;
 		}
 
-		public Date getDatetime() {
-			return datetime;
+
+		public Date getProcessDate() {
+			return processDate;
 		}
 
-		public void setDatetime(Date datetime) {
-			this.datetime = datetime;
+
+		public void setProcessDate(Date processDate) {
+			this.processDate = processDate;
 		}
+
+		
 	    
 	  
 	   

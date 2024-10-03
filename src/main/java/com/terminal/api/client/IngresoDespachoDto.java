@@ -1,96 +1,57 @@
-package com.terminal.api.entity;
+/**
+ * 
+ */
+package com.terminal.api.client;
 
 import java.math.BigInteger;
 
+import javax.jws.WebParam;
+
 /**
  * 
- * @author Franklin Pinto
- * @Project Gestión en Terminales
- * @Date 22/08/2024
- * @version 1.0.0
  */
+public class IngresoDespachoDto {
 
-public class EntryDispatchEntity {
-
-	
-	
-	public EntryDispatchEntity(
-			String numeroDespacho, 
-			BigInteger terId,
-			String nitEmpresaTppc1,
-			BigInteger claseVehiculo,
-			BigInteger nivelServicio, 
-			String placa,
-			String dptoOrigenRuta, 
-			String municipioOrigenRuta, 
-			String dptoDestinoRuta, 
-			String municipioDestinoRuta,
-			String viaRuta, 
-			String fechaDespacho, 
-			String horaDespacho, 
-			String minutoDespacho,
-			BigInteger pasajerosDespacho, 
-			BigInteger tipoDespacho, 
-			BigInteger tipoDespachoAutorizado,
-			String tipoConvenio, 
-			String nitEmpresaTppc2, 
-			String nitEmpresaTe,
-			BigInteger terminalesRecorridoRuta,
-			BigInteger valorTasaUso,
-			BigInteger origenPlaca) {
-		super();
-	
-		this.numeroDespacho = numeroDespacho;
-		this.terId = terId;
-		this.nitEmpresaTppc1 = nitEmpresaTppc1;
-		this.claseVehiculo = claseVehiculo;
-		this.nivelServicio = nivelServicio;
-		this.placa = placa;
-		this.dptoOrigenRuta = dptoOrigenRuta;
-		this.municipioOrigenRuta = municipioOrigenRuta;
-		this.dptoDestinoRuta = dptoDestinoRuta;
-		this.municipioDestinoRuta = municipioDestinoRuta;
-		this.viaRuta = viaRuta;
-		this.fechaDespacho = fechaDespacho;
-		this.horaDespacho = horaDespacho;
-		this.minutoDespacho = minutoDespacho;
-		this.pasajerosDespacho = pasajerosDespacho;
-		this.tipoDespacho = tipoDespacho;
-		this.tipoDespachoAutorizado = tipoDespachoAutorizado;
-		this.tipoConvenio = tipoConvenio;
-		this.nitEmpresaTppc2 = nitEmpresaTppc2;
-		this.nitEmpresaTe = nitEmpresaTe;
-		this.terminalesRecorridoRuta = terminalesRecorridoRuta;
-		this.valorTasaUso = valorTasaUso;
-		this.origenPlaca = origenPlaca;
+	private  String usuario;
+	private String clave;
+	private String numeroDespacho;
+	private BigInteger terId;
+    private String nitEmpresaTppc1;
+    private BigInteger claseVehiculo;
+    private BigInteger nivelServicio;
+    private String placa;
+    private String dptoOrigenRuta;
+    private String municipioOrigenRuta;
+    private String dptoDestinoRuta;
+    private String municipioDestinoRuta;
+    private String viaRuta;
+    private String fechaDespacho;
+    private String horaDespacho;
+    private String minutoDespacho;
+    private BigInteger pasajerosDespacho;
+    private BigInteger tipoDespacho;
+    private BigInteger tipoDespachoAutorizado;
+    private String tipoConvenio;
+    private String nitEmpresaTppc2;
+    private BigInteger nitEmpresaTe;
+    private BigInteger terminalesRecorridoRuta;
+    private BigInteger valorTasaUso;
+    private BigInteger origenPlaca;
+	public IngresoDespachoDto() {
+	      
 	}
-
-	private  String numeroDespacho;
-	private  BigInteger terId;
-	private  String nitEmpresaTppc1;
-	private  BigInteger claseVehiculo;
-	private  BigInteger nivelServicio;
-	private  String placa;
-	private   String dptoOrigenRuta;
-	private  String municipioOrigenRuta;
-	private  String dptoDestinoRuta;
-	private  String municipioDestinoRuta;
-	private  String viaRuta;
-	private  String fechaDespacho;
-	private  String horaDespacho;
-	private   String minutoDespacho;
-	private  BigInteger pasajerosDespacho;
-	private  BigInteger tipoDespacho;
-	private  BigInteger tipoDespachoAutorizado;
-	private  String tipoConvenio;
-	private  String nitEmpresaTppc2;
-	private  String nitEmpresaTe;
-	private  BigInteger terminalesRecorridoRuta;
-	private  BigInteger valorTasaUso;
-	private  BigInteger origenPlaca;
-	
-	
-	
+	public String getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+	public String getClave() {
+		return clave;
+	}
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
 	public String getNumeroDespacho() {
 		return numeroDespacho;
 	}
@@ -194,17 +155,22 @@ public class EntryDispatchEntity {
 		this.tipoDespachoAutorizado = tipoDespachoAutorizado;
 	}
 	
-	
+	public String getTipoConvenio() {
+		return tipoConvenio;
+	}
+	public void setTipoConvenio(String tipoConvenio) {
+		this.tipoConvenio = tipoConvenio;
+	}
 	public String getNitEmpresaTppc2() {
 		return nitEmpresaTppc2;
 	}
 	public void setNitEmpresaTppc2(String nitEmpresaTppc2) {
 		this.nitEmpresaTppc2 = nitEmpresaTppc2;
 	}
-	public String getNitEmpresaTe() {
+	public BigInteger getNitEmpresaTe() {
 		return nitEmpresaTe;
 	}
-	public void setNitEmpresaTe(String nitEmpresaTe) {
+	public void setNitEmpresaTe(BigInteger nitEmpresaTe) {
 		this.nitEmpresaTe = nitEmpresaTe;
 	}
 	public BigInteger getTerminalesRecorridoRuta() {
@@ -225,12 +191,7 @@ public class EntryDispatchEntity {
 	public void setOrigenPlaca(BigInteger origenPlaca) {
 		this.origenPlaca = origenPlaca;
 	}
-	public String getTipoConvenio() {
-		return tipoConvenio;
-	}
-	public void setTipoConvenio(String tipoConvenio) {
-		this.tipoConvenio = tipoConvenio;
-	}
-     
-     
+
+	
+	
 }

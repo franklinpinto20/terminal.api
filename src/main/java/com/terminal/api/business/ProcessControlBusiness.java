@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.terminal.api.constant.ErrorConstant;
@@ -33,7 +34,8 @@ public class ProcessControlBusiness implements ProcessControlService {
 	private IProcessControlDao processControlDao;
 
 	 
-   
+	 @Value("${app.process.control.activate}")
+	 private Boolean processControlActivate;
     
     private ProcessControlEntity toEntity(ProcessControlRequest request) {
         return new ModelMapper().map(request, ProcessControlEntity.class);
@@ -46,15 +48,16 @@ public class ProcessControlBusiness implements ProcessControlService {
   
     @Override
 	public void create(ProcessControlRequest req) {
-		
-    	processControlDao.create(toEntity(req));
+		if(processControlActivate)
+			processControlDao.create(toEntity(req));
 		
 	}
 
 
 	@Override
 	public void update(Long id, ProcessControlRequest req) {
-		processControlDao.update(toEntity(req),id);
+		if(processControlActivate)
+			processControlDao.update(toEntity(req),id);
 		
 	}
 

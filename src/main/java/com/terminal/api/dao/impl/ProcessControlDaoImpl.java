@@ -6,11 +6,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
+import com.terminal.api.business.DispatchBusiness;
 import com.terminal.api.dao.IProcessControlDao;
 import com.terminal.api.entity.ProcessControlEntity;
 
@@ -28,17 +31,22 @@ public class ProcessControlDaoImpl implements IProcessControlDao {
 	 @Autowired
 	 private JdbcTemplate template;
 	 
-
+	// Crear un logger para esta clase
+	 private static final Logger logger = LoggerFactory.getLogger(ProcessControlDaoImpl.class);
 
 	@Override
 	public void create(ProcessControlEntity entity) {
-			String sql = "INSERT INTO ProcessControl (Nconduce, Request, Response, Status, datetime) VALUES (?,?,?,?,?)";
-			        
-			    // Ejecutar el insert con los parámetros proporcionados
-				template.update(sql, entity.getnConduce(), entity.getRequest(), entity.getResponse(),entity.getStatus(),new Date());
+		try {
 			
-			        System.out.println("Proceso insertado correctamente: " + entity.getnConduce());
+				String sql = "INSERT INTO public.ProcessControl (Nconduce, Request, Response, Status, ProcessDate) VALUES (?,?,?,?,?)";
 		
+			    // Ejecutar el insert con los parámetros proporcionados
+				template.update(sql, entity.getnConduce(), entity.getRequest(), entity.getResponse(),entity.getStatus(), new Date());
+		
+				logger.info("Proceso insertado correctamente: " + entity.getnConduce());
+		}catch (Exception e) {
+				logger.error("Se ha producido un error en Base de datos creando el proceso: "+e.getMessage());
+		}
 	}
 
 	@Override
@@ -49,9 +57,9 @@ public class ProcessControlDaoImpl implements IProcessControlDao {
 		        int rowsAffected = template.update(sql, entity.getnConduce(),entity.getRequest(), entity.getResponse(), entity.getStatus(), id);
 
 		        if (rowsAffected > 0) {
-		            System.out.println("ProcessControlEntity actualizado correctamente: ID " + id);
+		        	logger.info("ProcessControlEntity actualizado correctamente: ID " + id);
 		        } else {
-		            System.out.println("No se encontró el ProcessControlEntity con ID: " + id);
+		        	logger.info("No se encontró el ProcessControlEntity con ID: " + id);
 		        }
 		
 	}

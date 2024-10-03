@@ -16,7 +16,7 @@ public class RouteConstant {
     /**
      * URL PROCESS CONTROL
      **/
-    public static final String PROCESS_CONTROL_SAVE_PATH = "DISPATCH_ENTRY_ng}";
+    public static final String PROCESS_CONTROL_SAVE_PATH = "${api.uri.process.control.save.mapping}";
     public static final String PROCESS_CONTROL_UPDATE_PATH = "${api.uri.process.control.update.mapping}";
     public static final String PROCESS_CONTROL_GET_PATH = "${api.uri.process.control.get.mapping}";
     public static final String PROCESS_CONTROL_GET_BY_ID = "${api.uri.process.control.get.by.id.mapping}";

@@ -60,7 +60,7 @@ public interface TerminalesSuperTransportePortType {
      */
     @WebMethod(operationName = "IngresoDespacho", action = "urn:SPTCDAwsdl#IngresoDespacho")
     @WebResult(partName = "return")
-    public String ingresoDespacho(
+    public Object  ingresoDespacho(
         @WebParam(name = "usuario", partName = "usuario")
         String usuario,
         @WebParam(name = "clave", partName = "clave")
@@ -100,9 +100,9 @@ public interface TerminalesSuperTransportePortType {
         @WebParam(name = "tipo_despacho_autorizado", partName = "tipo_despacho_autorizado")
         BigInteger tipoDespachoAutorizado,
         @WebParam(name = "tipo_convenio", partName = "tipo_convenio")
-        BigInteger tipoConvenio,
+        String tipoConvenio,
         @WebParam(name = "nit_empresa_tppc2", partName = "nit_empresa_tppc2")
-        BigInteger nitEmpresaTppc2,
+        String nitEmpresaTppc2,
         @WebParam(name = "nit_empresa_te", partName = "nit_empresa_te")
         BigInteger nitEmpresaTe,
         @WebParam(name = "terminales_recorrido_ruta", partName = "terminales_recorrido_ruta")

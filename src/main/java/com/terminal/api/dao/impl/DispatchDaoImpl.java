@@ -46,7 +46,7 @@ public class DispatchDaoImpl implements IDispatchDao {
 
      // Fechas que pasarás como parámetros (puedes obtenerlas de tu aplicación)
         String fechaInicio = "2024-09-01";
-        String fechaFin = "2024-09-10";
+        String fechaFin = "2024-09-30";
         
         EntryDispatchEntity entryDispatch=null;
         List<EntryDispatchEntity>  dispatchList=new ArrayList<>();
@@ -68,8 +68,8 @@ public class DispatchDaoImpl implements IDispatchDao {
                 Date fin = sdf.parse(fechaFin);
 
                 // Pasar los parámetros de fecha
-                pstmt.setDate(1, new java.sql.Date(inicio.getTime()));
-                pstmt.setDate(2, new java.sql.Date(fin.getTime()));
+                //pstmt.setDate(1, new java.sql.Date(inicio.getTime()));
+               // pstmt.setDate(2, new java.sql.Date(fin.getTime()));
                // pstmt.setDate(3, new java.sql.Date(inicio.getTime()));
                // pstmt.setDate(4, new java.sql.Date(fin.getTime()));
                 
@@ -100,8 +100,8 @@ public class DispatchDaoImpl implements IDispatchDao {
      				String tipoConvenio=rs.getString("tipo_Convenio"); 
      				String nitEmpresaTppc2=rs.getString("nit_Empresa_Tppc2");
      				String nitEmpresaTe=rs.getString("nit_Empresa_Te");
-     				int terminalesRecorridoRuta=rs.getInt("terminalRecorridoRuta");
-     				int valorTasaUso=rs.getInt("total"); 
+     				int terminalesRecorridoRuta=rs.getInt("terminales_recorrido_ruta");
+     				int valorTasaUso=rs.getInt("valor_tasa_uso"); 
      				int origenPlaca=rs.getInt("origen_Placa");
                     
      				entryDispatch= new EntryDispatchEntity(
@@ -128,8 +128,10 @@ public class DispatchDaoImpl implements IDispatchDao {
      	     				BigInteger.valueOf(Integer.valueOf(terminalesRecorridoRuta)),
      	     				BigInteger.valueOf(Integer.valueOf(valorTasaUso)),
      	     				BigInteger.valueOf(Integer.valueOf(origenPlaca)));
+     				
+     				dispatchList.add(entryDispatch);
                 }
-                dispatchList.add(entryDispatch);
+                
 
             } catch (SQLException | java.text.ParseException e) {
                 e.printStackTrace();
