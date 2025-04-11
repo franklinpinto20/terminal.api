@@ -37,6 +37,10 @@ public class ProcessControlBusiness implements ProcessControlService {
 	 @Value("${app.process.control.activate}")
 	 private Boolean processControlActivate;
     
+	public ProcessControlBusiness () {
+		
+	}
+	 
     private ProcessControlEntity toEntity(ProcessControlRequest request) {
         return new ModelMapper().map(request, ProcessControlEntity.class);
     }

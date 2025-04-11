@@ -40,9 +40,7 @@ public class ProcessControlEntity  implements java.io.Serializable {
 		 */
 		private static final long serialVersionUID = -4050885068713886977L;
 		
-		public ProcessControlEntity() {
-			
-		}
+	
 		
 
 		public ProcessControlEntity(Long id, Long nConduce, String request, String response, String status) {

@@ -9,6 +9,11 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
  * 
@@ -18,14 +23,14 @@ import org.springframework.context.annotation.PropertySource;
  * @version 1.0.0
  */
 
-
+//@EnableWebMvc
 @ComponentScan(basePackages = "com.terminal.api")
 @EntityScan("com.terminal.api.entity") 
 @PropertySource("file:C:/Users/Usuario/Documents/workspace/terminal.api/src/main/resources/properties.properties")
 @SpringBootApplication(scanBasePackages = {"com.terminal.api.service","com.terminal.api.repository","com.terminal.api"})
 
 
-public class Application implements CommandLineRunner {
+public class Application  extends SpringBootServletInitializer  implements CommandLineRunner {
 
 	// Crear un logger para esta clase
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
@@ -41,5 +46,12 @@ public class Application implements CommandLineRunner {
 		 logger.info("INICIANDO PLATAFORMA DE GESTION DE TERMINALES");
 		
 	}
+	
+	
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(Application.class);
+	}
+	
 	
 }
